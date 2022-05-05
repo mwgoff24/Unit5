@@ -50,4 +50,15 @@ example_word_list = example_paragraph_lower_no_punctuation.split(" ")
 '''
 
 # paragraph
-paragraph = "Type O Negative was a gothic doom metal band from New York City. "
+paragraph = "Type O Negative was a gothic doom metal band from New York City. Many aspects about them are unique. Frontman Peter Steele had the Beatles and Black Sabbath as his two main influences. The band also performed cover songs unusual for a metal band to perform. An example would be Summer Breeze by Seals & Crofts. They also had much self-depricating humor on their albums. Most of this can be found on the liner notes of each album."
+print(paragraph)
+
+# make all letters lowercase
+paragraph_lower = paragraph.lower()
+
+# remove all periods
+paragraph_lower_no_punctuation = paragraph_lower.replace(".", "")
+
+# convert paragraph into a list of individual strings
+word_list = paragraph_lower_no_punctuation.split(" ")
+print(word_list)
