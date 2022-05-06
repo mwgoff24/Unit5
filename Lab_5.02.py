@@ -50,8 +50,13 @@ example_word_list = example_paragraph_lower_no_punctuation.split(" ")
 '''
 
 # paragraph
-paragraph = "Type O Negative was a gothic doom metal band from New York City. Many aspects about them are unique. Frontman Peter Steele had the Beatles and Black Sabbath as his two main influences. The band also performed cover songs unusual for a metal band to perform. An example would be Summer Breeze by Seals & Crofts. They also had much self-depricating humor on their albums. Most of this can be found on the liner notes of each album."
+paragraph = ("Thrash metal is an extreme subgenre of heavy metal music that combines the technicality "
+"of the new wave of British heavy metal with the speed and aggression of hardcore punk. This genre made its "
+"official debut in 1983 when Metallica released their debut album. From this point the genre became international. "
+"Today thrash metal is probably the most international metal genre. It also has the most diverse vocals in all metal. "
+"You get good singers like Joey Belladona of Anthrax and dissonant shouters like Tom Araya of Slayer.")
 print(paragraph)
+print("\n")
 
 # make all letters lowercase
 paragraph_lower = paragraph.lower()
@@ -61,4 +66,17 @@ paragraph_lower_no_punctuation = paragraph_lower.replace(".", "")
 
 # convert paragraph into a list of individual strings
 word_list = paragraph_lower_no_punctuation.split(" ")
-print(word_list)
+
+# loop to find a word
+while True:
+    word_count = 0
+    word_choice = input("What word would you like to see from this paragraph? ")
+    for word in word_list:
+        if word_choice == word:
+            word_count += 1
+    if word_count == 0:
+        print(f"The word '{word_choice}' does not show up in this paragraph. \n")
+    elif word_count == 1:
+        print(f"The word '{word_choice}' shows up {word_count} time. \n")
+    else:
+        print(f"The word '{word_choice}' shows up {word_count} times. \n")
