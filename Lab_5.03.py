@@ -53,7 +53,7 @@ to_do_list = {
     'friday': [],
     'saturday': [],
 }
-# printed disclaimer
+# print statement before main program
 print("Before the program begins, make sure that all of your responses contain ONLY lowercase letters. \n")
 
 # user inputs
