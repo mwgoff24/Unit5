@@ -50,11 +50,11 @@ example_word_list = example_paragraph_lower_no_punctuation.split(" ")
 '''
 
 # paragraph
-paragraph = ("Thrash metal is an extreme subgenre of heavy metal music that combines the technicality "
-"of the new wave of British heavy metal with the speed and aggression of hardcore punk. This genre made its "
-"official debut in 1983 when Metallica released their debut album. From this point the genre became international. "
-"Today thrash metal is probably the most international metal genre. It also has the most diverse vocals in all metal. "
-"You get good singers like Joey Belladona of Anthrax and dissonant shouters like Tom Araya of Slayer.")
+paragraph = '''Thrash metal is an extreme subgenre of heavy metal music that combines the technicality 
+of the new wave of British heavy metal with the speed and aggression of hardcore punk. This genre made its 
+official debut in 1983 when Metallica released their debut album. From this point the genre became international. 
+Today thrash metal is probably the most international metal genre. It also has the most diverse vocals in all metal. 
+You get good singers like Joey Belladona of Anthrax and dissonant shouters like Tom Araya of Slayer.'''
 print(paragraph)
 print("\n")
 
