@@ -64,6 +64,8 @@ paragraph_lower = paragraph.lower()
 # remove all periods
 paragraph_lower_no_punctuation = paragraph_lower.replace(".", "")
 
+paragraph_lower_no_punctuation = paragraph_lower_no_punctuation.replace("\n", "")
+
 # convert paragraph into a list of individual strings
 word_list = paragraph_lower_no_punctuation.split(" ")
 
