@@ -75,3 +75,18 @@ while True:
         break
     else:
         print("That is not an available command.")
+
+# user inputs simplified
+while True:
+    # all words in input are split into different lists
+    choice = input("What would you like to do? ")
+    choice = choice.split(" ")
+    # the first index is the command, or the first word from choice
+    if choice[0] == 'get':
+        print(f"Here is your list for {choice[1]}: {to_do_list[choice[1]]}")
+    elif choice[0] == 'add':
+        to_do_list[choice[1]].append([choice[2]])
+    elif choice[0] == 'quit':
+        break
+    else:
+        print("Your first word does not appear to be an available command.")
