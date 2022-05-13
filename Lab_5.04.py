@@ -107,7 +107,11 @@ I do not like them, Sam-I-am.
 
 word_count_dict = {}
 
+max_value_change = 0
+
 # functions
+
+# text to word list, turns the paragraph variable into a list of separate words
 def text_to_word_list():
     global paragraph
     paragraph_lower = paragraph.lower()
@@ -118,6 +122,7 @@ def text_to_word_list():
     word_list = paragraph_lower_no_punctuation.split(" ")
     return word_list
 
+# count frequencies, adds all words from word_list to a dictionary and counts the amount of times a word appears
 def count_frequencies():
     global word_count_dict
     for word in text_to_word_list():
@@ -125,15 +130,74 @@ def count_frequencies():
             word_count_dict[word] += 1
         else:
             word_count_dict[word] = 1
-    print(word_count_dict)
 
+# find max valued key, finds the word that appears the most
 def find_max_valued_key(dictionary):
+    global max_value_change
     max_key = max(dictionary, key = dictionary.get)
     max_value = max(dictionary.values())
     print(f"{max_key}: {max_value}")
-    dictionary.pop(max_key, max_value)
-    print(f"{max_key}: {max_value}")
+    # deletes the key for the while loop
+    del dictionary[max_key]
+    # updates the while loop to only allow the top 5 words
+    max_value_change += 1
 
-
+# program
 count_frequencies()
-find_max_valued_key(word_count_dict)
+
+# only lets 5 words be shown
+while max_value_change < 5:
+    find_max_valued_key(word_count_dict)
+
+print("\n")
+
+
+# bonus
+# global variable for use after while loop
+frequency_list = []
+
+# rate frequencies, adds to frequency_list to rate how often a word happens from most to least frequent
+def rate_frequencies(dictionary):
+    global frequency_list
+    max_key = max(dictionary, key = dictionary.get)
+    max_value = max(dictionary.values())
+    frequency_list.append(f"{max_key}: {max_value}")
+    del dictionary[max_key]
+
+# redefining paragraph for everything to work in one go
+paragraph = '''
+I am Sam. I am Sam. Sam-I-am. 
+
+That Sam-I-am! That Sam-I-am! 
+I do not like that Sam-I-am! 
+
+Would you like green eggs and ham? 
+
+I do not like them, Sam-I-am. 
+I do not like green eggs and ham. 
+
+Would you like them here or there? 
+
+I would not like them here or there. 
+I would not like them anywhere. 
+I do not like green eggs and ham. 
+I do not like them, Sam-I-am. 
+
+Would you like them in a house? 
+Would you like them with a mouse? 
+
+I do not like them in a house. 
+I do not like them with a mouse. 
+I do not like them here or there. 
+I do not like them anywhere. 
+I do not like green eggs and ham. 
+I do not like them, Sam-I-am.
+'''
+
+# recounts frequencies for everything to work in one go
+count_frequencies()
+
+while word_count_dict != {}:
+    rate_frequencies(word_count_dict)
+
+print(frequency_list)
